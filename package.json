@@ -1,0 +1,19 @@
+{
+  "name": "www.cfmx.org",
+  "version": "1.0.0",
+  "description": "I am an exploration into using HTMX with Adobe ColdFusion and Lucee (cfml).",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf ./_site && npm run build:eleventy",
+    "build:eleventy": "npx @11ty/eleventy --input ./src/ --output ./public/",
+    "dev": "rm -rf ./_site && npm run dev:eleventy",
+    "dev:eleventy": "npx @11ty/eleventy --input ./src/ --serve"
+  },
+  "keywords": [],
+  "author": "Richard Herbert",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
