@@ -1,5 +1,6 @@
 ---
 layout: default.html
+title: cfmx.org
 ---
 # [cfmx.org](http://www.cfmx.org/)
 
