@@ -3,15 +3,53 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="htmx-config" content='{"selfRequestsOnly": false}'>
 		<title>cfmx.org</title>
 		<script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
 	</head>
 
 	<body>
-		<h1><a href="http://www.cfmx.org/">cfmx.org</a></h1>
-<p>I am an exploration into using <a href="https://htmx.org/">HTMX</a> with <a href="https://www.adobe.com/products/coldfusion-family.html">Adobe ColdFusion</a> and <a href="https://www.lucee.org/">Lucee</a> (<a href="https://en.wikipedia.org/wiki/ColdFusion_Markup_Language">cfml</a>).</p>
-<p>This is a static site hosted on <a href="https://pages.github.com/">GitHub Page</a> and built with <a href="https://www.11ty.dev">Eleventy</a> and <a href="https://simplecss.org">Simple CSS</a> which gets it's dynamic content, using htmx, from <a href="https://api.cfmx.org">api.cfmx.org</a> powered by Lucee.</p>
+		<header>
+			<nav>
+				<a href="/">Home</a>
+				<a href="/references">References</a>
+			</nav>
+
+			<h1>cfmx.org</h1>
+
+			<p>I am an exploration into using <a href="https://htmx.org">HTMX</a> with <a href="https://en.wikipedia.org/wiki/ColdFusion_Markup_Language">CFML</a> (<a href="https://www.adobe.com/products/coldfusion-family.html">Adobe ColdFusion</a> or <a href="https://www.lucee.org">Lucee</a>)</p>
+		</header>
+
+		<p>This is a static site hosted on <a href="https://pages.github.com/">GitHub Page</a> and built with <a href="https://www.11ty.dev">Eleventy</a> and <a href="https://simplecss.org">Simple CSS</a> which gets it's dynamic content, using htmx, from <a href="https://api.cfmx.org">api.cfmx.org</a> powered by Lucee.</p>
+<button hx-get="https://api.cfmx.org/healthcheck/" hx-target="#healthcheck">
+	Click this button to see the contents below change
+</button>
+<div id="healthcheck">
+	<p>I will be replaced with content from the Lucee server when the button above is clicked.</p>
+</div>
+<h3>HTML</h3>
+<p>The following is the html and htmx used to render the button and the initial text.</p>
+<pre><code>&lt;button hx-get=&quot;https://api.cfmx.org/healthcheck/&quot; hx-target=&quot;#healthcheck&quot;&gt;
+  Click this button to see the contents below change
+&lt;/button&gt;
+
+&lt;div id=&quot;healthcheck&quot;&gt;
+  &lt;p&gt;I will be replaced with content from the Lucee
+  server when the button above is clicked.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>CFML</h3>
+<p>The following is the cfml that renders the current date and time in ISO8601 format.</p>
+<pre><code>&lt;cfoutput&gt;
+  &lt;p&gt;The current time on the server is #now().dateTimeFormat( 'iso8601' )#&lt;/p&gt;
+&lt;/cfoutput&gt;
+</code></pre>
+<h4>Notes:</h4>
+<p>By default htmx doesn't allow requests to be made to domains other than the current host. This is considered a CORS (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing</a>) vulnerability. To counter this, the following meta tag should be added to the html <code>&lt;head&gt;...&lt;/head&gt;</code> of the page.</p>
+<pre><code>&lt;meta name=&quot;htmx-config&quot; content='{&quot;selfRequestsOnly&quot;: false}'&gt;
+</code></pre>
+<p>On the server side, CORS will also need to be supported to allow requests from other domains to be allowed.</p>
 
 	</body>
 </html>
