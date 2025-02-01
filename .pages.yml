@@ -7,3 +7,11 @@ content:
       - { name: layout, type: string, hidden: true, default: default.html }
       - { name: title, label: Title, type: string }
       - { name: body, label: Body, type: rich-text }
+  - name: references
+    label: References
+    type: file
+    path: src/references.md
+    fields:
+      - { name: layout, type: string, hidden: true, default: default.html }
+      - { name: title, label: Title, type: string }
+      - { name: body, label: Body, type: rich-text }
