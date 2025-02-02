@@ -1,4 +1,5 @@
 ---
+layout: default.html
 title: Related Dropdown Fields
 order: 1
 ---
