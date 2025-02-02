@@ -1,5 +1,6 @@
 ---
 layout: default.html
+tags: examples
 title: Related Dropdown Fields
 order: 1
 ---
