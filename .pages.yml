@@ -22,6 +22,7 @@ content:
     filename: "{primary}.md"
     fields:
     - { name: layout, type: string, hidden: true, default: default.html }
+    - { name: tags, label: Tags, type: string }
     - { name: title, label: Title, type: string }
     - { name: order, label: Order, type: number }
     - { name: body, label: Body, type: rich-text }
