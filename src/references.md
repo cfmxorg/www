@@ -1,6 +1,6 @@
 ---
 layout: default.html
-title: References | cfmx.org
+title: References
 ---
 
 ## htmx

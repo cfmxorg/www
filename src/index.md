@@ -1,6 +1,6 @@
 ---
 layout: default.html
-title: cfmx.org
+title: 
 ---
 
 This is a static site hosted on [GitHub Page](https://pages.github.com/) and built with [Eleventy](https://www.11ty.dev) and [Simple CSS](https://simplecss.org) which gets it's dynamic content, using htmx, from [{{ site.domain }}](https://{{ site.domain }}) powered by Lucee.
