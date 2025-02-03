@@ -19,4 +19,6 @@ title: References
 
 *   Ensure that a custom domain name is retained after a deployment
     
+    *   [Why Is My Github Pages Custom Domain Constantly Reset?](https://stackoverflow.com/a/72860883)
+        
     *   [GitHub Actions for GitHub Pages](https://github.com/peaceiris/actions-gh-pages?tab=readme-ov-file#%EF%B8%8F-add-cname-file-cname)
