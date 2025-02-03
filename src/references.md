@@ -15,7 +15,7 @@ title: References
 
 ## cfml
 
-## GitHub Actions
+## GitHub Pages
 
 *   Ensure that a custom domain name is retained after a deployment
     
