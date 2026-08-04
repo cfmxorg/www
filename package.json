@@ -7,7 +7,8 @@
     "build": "rm -rf ./_site && npm run build:eleventy",
     "build:eleventy": "npx @11ty/eleventy --input ./src/ --output ./public/",
     "dev": "rm -rf ./_site && npm run dev:eleventy",
-    "dev:eleventy": "npx @11ty/eleventy --input ./src/ --serve"
+    "dev:eleventy": "npx @11ty/eleventy --input ./src/ --serve",
+    "deploy": "rsync -azh --info=name1 --stats -e 'ssh -p 10022' ./_site/ agilemix@greyhound.dnshostnetwork.com:~/public_html/cfmx.org/www/webroot/"
   },
   "keywords": [],
   "author": "Richard Herbert",
